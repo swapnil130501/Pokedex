@@ -37,7 +37,7 @@ function Home() {
             <div className="flex justify-center mb-8">
             <input
                 type="text"
-                placeholder="Search for a Pokémon..."
+                placeholder="Search for a Pokémon"
                 className="border border-gray-300 rounded-lg p-2 w-1/2 md:w-1/4"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)} 
