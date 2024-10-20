@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import PokeCard from '../components/PokeCard';
+import Input from '../components/Input';
 
 function Home() {
 
     const [pokeData, setPokeData] = useState([]);
     const [search, setSearch] = useState("");
+
     const getPokeData = async () => {   
         try {
             const response = await fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=500");
@@ -35,13 +37,14 @@ function Home() {
             </h1>
 
             <div className="flex justify-center mb-8">
-            <input
-                type="text"
-                placeholder="Search for a Pokémon"
-                className="border border-gray-300 rounded-lg p-2 w-1/2 md:w-1/4"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)} 
-                />
+                <Input
+                    type="text"
+                    placeholder="Search for a Pokémon"
+                    className="border border-gray-300 rounded-lg p-2 w-1/2 md:w-1/4"
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)} 
+                >
+            </Input>
             </div>
         
             <div className="flex flex-wrap gap-6 justify-center">
