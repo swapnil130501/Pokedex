@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { typeColors } from '../utils/utility';
+import { Link } from "react-router-dom";
+
 function PokeCard({ name }) {
     const [data, setData] = useState({});
 

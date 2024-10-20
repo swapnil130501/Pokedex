@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PokeCard from '../components/PokeCard';
 import Input from '../components/Input';
+import { Link, Router } from 'react-router-dom';
 
 function Home() {
 
@@ -26,7 +27,7 @@ function Home() {
     );
     
     return (
-        <div className="min-h-screen bg-gray-100 p-8">
+        <div style={{ backgroundColor: "#ffe4c4" }} className="min-h-screen bg-gray-100 p-8">
             <h1 className="text-5xl font-extrabold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-purple-600 drop-shadow-lg uppercase tracking-wide flex items-center justify-center">
                 Pokédex
                 <img
@@ -49,7 +50,9 @@ function Home() {
         
             <div className="flex flex-wrap gap-6 justify-center">
                 {filteredPokeData.map((pokemon) => (
-                    <PokeCard key={pokemon.name} name={pokemon.name} />
+                    <Link key={pokemon.name} to={`/pokemon/${pokemon.name}`}>
+                        <PokeCard name={pokemon.name} />
+                    </Link>
                 ))}
             </div>
 
