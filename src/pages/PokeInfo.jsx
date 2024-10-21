@@ -26,19 +26,39 @@ function PokeInfo() {
 
             <div className="mb-6">
                 <h2 className="text-4xl font-semibold mb-4">Height:</h2>
-                <p className="text-lg">{pokemonData.height} decimetres</p>
+                <p className="text-lg">{pokemonData.height}</p>
             </div>
 
             <div className="mb-6">
-                <h2 className="text-4xl font-semibold mb-4">Height:</h2>
-                <p className="text-lg">{pokemonData.height} decimetres</p>
+                <h2 className="text-4xl font-semibold mb-4">Weight:</h2>
+                <p className="text-lg">{pokemonData.weight}</p>
             </div>
 
-            <div>
+            <div className="mb-6">
                 <h2 className="text-4xl font-semibold mb-4">Moves:</h2>
                 <ul>
                     {pokemonData.moves.slice(0, 10).map((move) => (
                         <li key={move.move.name} className="text-lg">{move.move.name}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <div className="mb-6">
+                <h2 className="text-4xl font-semibold mb-4">Abilities:</h2>
+                <ul>
+                    {pokemonData.abilities.map((it) => (
+                        <li key={it.ability.name} className="text-lg">{it.ability.name}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <div className="mb-6">
+                <h2 className="text-4xl font-semibold mb-4">Stats:</h2>
+                <ul>
+                    {pokemonData.stats.map((it) => (
+                        <li key={it.stat.name} className="text-lg">{it.stat.name}
+                            <span>{it.base_stat}</span>
+                        </li>
                     ))}
                 </ul>
             </div>
