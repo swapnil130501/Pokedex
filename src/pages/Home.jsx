@@ -49,10 +49,8 @@ function Home() {
             </div>
         
             <div className="flex flex-wrap gap-6 justify-center">
-                {filteredPokeData.map((pokemon) => (
-                    <Link key={pokemon.name} to={`/pokemon/${pokemon.name}`}>
-                        <PokeCard name={pokemon.name} />
-                    </Link>
+                {filteredPokeData.map((pokemon) => (    
+                    <PokeCard key = {pokemon.name} name={pokemon.name} />
                 ))}
             </div>
 
